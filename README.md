@@ -1,30 +1,30 @@
-# GOTCHA! – 가챠샵 지도 서비스
+# GOTCHA! – Gacha Shop Map Service
 
 <p align="center">
-  <img src="appstore-assets/screenshots/iPad13Air/앱미리보기(아이패드)_1인트로.png" alt="GOTCHA! 앱 인트로 화면 1" width="49%" />
-  <img src="appstore-assets/screenshots/iPad13Air/앱미리보기(아이패드)_2인트로.png" alt="GOTCHA! 앱 인트로 화면 2" width="49%" />
+  <img src="appstore-assets/screenshots/iPad13Air/앱미리보기(아이패드)_1인트로.png" alt="GOTCHA! App Intro Screen 1" width="49%" />
+  <img src="appstore-assets/screenshots/iPad13Air/앱미리보기(아이패드)_2인트로.png" alt="GOTCHA! App Intro Screen 2" width="49%" />
 </p>
 
-가챠샵(Gacha Shop)을 지도 기반으로 탐색하고, 리스트 및 상세 페이지를 통해 매장 정보를 확인할 수 있는 모바일 웹 서비스입니다.
+A mobile web service for discovering Gacha Shops on a map, browsing store listings, and viewing detailed shop information.
 
 [![Download on the App Store](https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg)](https://apps.apple.com/kr/app/id6759491099)
 
 ---
 
-## 주요 기능
+## Key Features
 
-- 🗺️ 카카오맵 기반 가챠샵 위치 탐색
-- 🏪 매장 상세 정보 및 리뷰
-- ⭐ 즐겨찾기
-- 📝 새 업체 제보
-- 🚨 리뷰/매장/사용자 신고 및 차단
-- 🔔 Web Push 알림
-- 📱 PWA 지원
-- 📲 iOS App Store 출시
+- 🗺️ Kakao Map-based gacha shop discovery
+- 🏪 Store details & reviews
+- ⭐ Favorites
+- 📝 New shop submissions
+- 🚨 Review/shop/user reporting & blocking
+- 🔔 Web Push notifications
+- 📱 PWA support
+- 📲 Available on iOS App Store
 
-### 예정 기능
+### Upcoming
 
-- 🤖 AI로 캐릭터명 도출하기
+- 🤖 AI-powered character name recognition
 
 ---
 
@@ -39,9 +39,9 @@
 - Zustand
 - TanStack Query
 - Kakao Map SDK
-- Lucide React (아이콘)
-- PWA 지원
-- Capacitor (iOS 네이티브 앱)
+- Lucide React (icons)
+- PWA support
+- Capacitor (iOS native app)
 - Vercel
 
 ### Backend
@@ -53,65 +53,65 @@
 - Swagger
 - AWS EC2 / S3
 
-🔗 백엔드 깃헙 레포지토리: [GOTCHA-BE](https://github.com/fcde-project9/GOTCHA-BE)
+🔗 Backend repository: [GOTCHA-BE](https://github.com/fcde-project9/GOTCHA-BE)
 
 ---
 
-## 아키텍처 패턴
+## Architecture Patterns
 
-| 영역       | 패턴                                           |
-| ---------- | ---------------------------------------------- |
-| 상태 관리  | Zustand (전역) + TanStack Query (서버)         |
-| API 레이어 | API Wrapper (`request.ts`) + Query Key Factory |
-| 에러 처리  | QueryErrorBoundary                             |
-| 인증       | Zustand Persist                                |
+| Area             | Pattern                                        |
+| ---------------- | ---------------------------------------------- |
+| State Management | Zustand (global) + TanStack Query (server)     |
+| API Layer        | API Wrapper (`request.ts`) + Query Key Factory |
+| Error Handling   | QueryErrorBoundary                             |
+| Authentication   | Zustand Persist                                |
 
-📖 상세: [`.ai/architecture.md`](.ai/architecture.md) | [`.ai/coding_standards.md`](.ai/coding_standards.md)
+📖 Details: [`.ai/architecture.md`](.ai/architecture.md) | [`.ai/coding_standards.md`](.ai/coding_standards.md)
 
 ---
 
 ## CI/CD
 
-GitHub Actions + Vercel을 사용한 자동 배포 파이프라인
+Automated deployment pipeline using GitHub Actions + Vercel
 
-| 브랜치 | 환경       | URL                                            |
-| ------ | ---------- | ---------------------------------------------- |
-| `dev`  | Preview    | [dev.gotcha.it.com](https://dev.gotcha.it.com) |
-| `main` | Production | [gotcha.it.com](https://gotcha.it.com)         |
+| Branch | Environment | URL                                            |
+| ------ | ----------- | ---------------------------------------------- |
+| `dev`  | Preview     | [dev.gotcha.it.com](https://dev.gotcha.it.com) |
+| `main` | Production  | [gotcha.it.com](https://gotcha.it.com)         |
 
-**배포 프로세스**: 코드 푸시 → 린트 검사 → 빌드 → Vercel 배포
+**Deployment Process**: Code push → Lint check → Build → Vercel deploy
 
 ---
 
-## 개발 환경 설정
+## Development Setup
 
-### 필수 요구사항
+### Prerequisites
 
-- Node.js 24 이상
-- npm 9 이상
+- Node.js 24 or higher
+- npm 9 or higher
 
-### 설치 및 실행
+### Installation & Running
 
-1. Node 버전 설정 (nvm 사용 시)
+1. Set Node version (if using nvm)
 
    ```bash
    nvm use
    ```
 
-2. 의존성 설치
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-3. 환경 변수 설정
+3. Configure environment variables
 
    ```bash
    cp .env.example .env.local
-   # .env.local 파일을 열어 실제 값 입력
+   # Open .env.local and fill in the actual values
    ```
 
-4. 개발 서버 실행
+4. Start the development server
 
    ```bash
    npm run dev
@@ -119,86 +119,86 @@ GitHub Actions + Vercel을 사용한 자동 배포 파이프라인
 
    Open [http://localhost:3000](http://localhost:3000)
 
-### 사용 가능한 스크립트
+### Available Scripts
 
-| 명령어                    | 설명                                   |
-| ------------------------- | -------------------------------------- |
-| `npm run dev`             | 개발 서버 실행 (localhost:3000)        |
-| `npm run build`           | 프로덕션 빌드                          |
-| `npm run start`           | 프로덕션 서버 실행                     |
-| `npm run dev:ios`         | 개발 서버 연결로 iOS 시뮬레이터 실행   |
-| `npm run build:capacitor` | Capacitor 타겟 프로덕션 빌드           |
-| `npm run build:ios`       | Capacitor 빌드 + iOS sync + Xcode 열기 |
-| `npm run lint`            | ESLint 검사                            |
-| `npm run lint:fix`        | ESLint 자동 수정                       |
-| `npm run format`          | Prettier 포맷팅 (전체 프로젝트 파일)   |
+| Command                   | Description                                      |
+| ------------------------- | ------------------------------------------------ |
+| `npm run dev`             | Start dev server (localhost:3000)                |
+| `npm run build`           | Production build                                 |
+| `npm run start`           | Start production server                          |
+| `npm run dev:ios`         | Run iOS simulator with dev server                |
+| `npm run build:capacitor` | Production build for Capacitor target            |
+| `npm run build:ios`       | Capacitor build + iOS sync + open Xcode          |
+| `npm run lint`            | Run ESLint                                       |
+| `npm run lint:fix`        | Auto-fix ESLint issues                           |
+| `npm run format`          | Run Prettier formatting (all project files)      |
 
 ### Git Hooks (Husky)
 
-커밋 시 자동으로 코드 품질 검사가 실행됩니다.
+Code quality checks run automatically on commit.
 
 ```text
 pre-commit → lint-staged → ESLint + Prettier
 ```
 
-| 파일 타입           | 실행 작업                          |
-| ------------------- | ---------------------------------- |
-| `*.{js,jsx,ts,tsx}` | ESLint 자동 수정 + Prettier 포맷팅 |
-| `*.{json,css,md}`   | Prettier 포맷팅                    |
+| File Type           | Action                               |
+| ------------------- | ------------------------------------ |
+| `*.{js,jsx,ts,tsx}` | ESLint auto-fix + Prettier format    |
+| `*.{json,css,md}`   | Prettier format                      |
 
-> 린트 에러가 있으면 커밋이 차단됩니다. `npm run lint:fix`로 먼저 수정하세요.
+> Commits will be blocked if there are lint errors. Run `npm run lint:fix` first.
 
 ---
 
-## 프로젝트 폴더 구조
+## Project Structure
 
 ```
 src/
-├── app/           # Next.js App Router (페이지)
-├── components/    # 컴포넌트 (common, features, mypage, report 등)
-├── api/           # API 클라이언트, queries, mutations
-├── stores/        # Zustand 상태 관리
-├── hooks/         # 커스텀 훅
-├── types/         # TypeScript 타입
-├── utils/         # 유틸리티 함수
-├── constants/     # 상수
-├── styles/        # 스타일
-└── lib/           # 외부 라이브러리 유틸
+├── app/           # Next.js App Router (pages)
+├── components/    # Components (common, features, mypage, report, etc.)
+├── api/           # API client, queries, mutations
+├── stores/        # Zustand state management
+├── hooks/         # Custom hooks
+├── types/         # TypeScript types
+├── utils/         # Utility functions
+├── constants/     # Constants
+├── styles/        # Styles
+└── lib/           # External library utilities
 ```
 
 ---
 
-## AI 문서 활용 (.ai 폴더)
+## AI Documentation (.ai folder)
 
-프로젝트의 `.ai/` 폴더에는 AI 도구(Claude, Cursor 등)와 개발자가 함께 참조하는 표준 문서가 포함되어 있습니다.
+The `.ai/` folder contains standard documentation referenced by both AI tools (Claude, Cursor, etc.) and developers.
 
-### 문서 목록
+### Document List
 
-| 파일                                | 설명                                   |
-| ----------------------------------- | -------------------------------------- |
-| `daily-learnings/`                  | 일일 학습 기록 (`/wrap` 명령어로 생성) |
-| `initial_setting.md`                | 프로젝트 초기 설정 가이드              |
-| `coding_standards.md`               | 코딩 컨벤션 및 네이밍 규칙             |
-| `nextjs16_best_practices.md`        | Next.js 16 + React 19 권장 패턴        |
-| `nextjs16_migration_guide.md`       | Next.js 16 마이그레이션 가이드         |
-| `seo_standards.md`                  | SEO 최적화 가이드                      |
-| `modal_and_permission_standards.md` | 모달 및 권한 요청 UI 표준              |
-| `button_component.md`               | Button 컴포넌트 사용 가이드            |
-| `user_role_permissions.md`          | 사용자 역할별 권한 정의                |
-| `google_analytics.md`               | Google Analytics 설정 가이드           |
-| `capacitor_ios_setup.md`            | Capacitor iOS 앱 래핑 구현 문서        |
+| File                                | Description                                        |
+| ----------------------------------- | -------------------------------------------------- |
+| `daily-learnings/`                  | Daily learning notes (generated via `/wrap` command)|
+| `initial_setting.md`                | Project initial setup guide                        |
+| `coding_standards.md`               | Coding conventions & naming rules                  |
+| `nextjs16_best_practices.md`        | Next.js 16 + React 19 best practices               |
+| `nextjs16_migration_guide.md`       | Next.js 16 migration guide                         |
+| `seo_standards.md`                  | SEO optimization guide                             |
+| `modal_and_permission_standards.md` | Modal & permission request UI standards            |
+| `button_component.md`              | Button component usage guide                       |
+| `user_role_permissions.md`          | User role permission definitions                   |
+| `google_analytics.md`              | Google Analytics setup guide                       |
+| `capacitor_ios_setup.md`           | Capacitor iOS app wrapping documentation           |
 
-### 활용 방법
+### How to Use
 
-1. **AI 도구 컨텍스트**: Claude Code, Cursor 등에서 코드 작성 시 `.ai/` 문서를 참조하여 프로젝트 컨벤션에 맞는 코드 생성
+1. **AI Tool Context**: Reference `.ai/` docs when writing code with Claude Code, Cursor, etc. to generate code that follows project conventions
 
-2. **온보딩**: 신규 개발자가 프로젝트 표준을 빠르게 파악
+2. **Onboarding**: Helps new developers quickly understand project standards
 
-3. **일관성 유지**: 코딩 스타일, 컴포넌트 패턴, SEO 설정 등의 표준화
+3. **Consistency**: Standardizes coding styles, component patterns, SEO settings, etc.
 
-4. **학습 기록**: `daily-learnings/`에 새로 배운 개념을 정리하여 팀 내 지식 공유
+4. **Learning Records**: Share knowledge within the team by documenting new concepts in `daily-learnings/`
 
-### 문서 업데이트 원칙
+### Documentation Update Policy
 
-- 코드와 문서가 불일치할 경우, `.ai/` 문서를 먼저 갱신한 후 코드 반영
-- 새로운 패턴이나 컨벤션 도입 시 관련 문서 업데이트 필수
+- If code and documentation are out of sync, update `.ai/` docs first, then reflect in code
+- When introducing new patterns or conventions, updating related documentation is required
